@@ -1,0 +1,396 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+        <title>{{ header.general_title }}</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap-icons.css' %}" rel="stylesheet">
+        <link href="{% static 'css/templatemo-leadership-event.css' %}" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a href="{% url 'index' %}" class="navbar-brand mx-auto mx-lg-0">
+                    <i class="bi-bullseye brand-logo"></i>
+                    <span class="brand-text">{{ header.left_title }} <br> {{ header.right_title }}</span>
+                </a>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_1">{{ header.path1 }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_2">{{ header.path2 }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_3">{{ header.path3 }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_4">{{ header.path4 }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_5">{{ header.path5 }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_6">{{ header.path6 }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link click-scroll" href="#section_7">{{ header.path7 }}</a>
+                        </li>
+                    </ul>
+                <div>
+            </div>
+        </nav>
+        <main>
+            <section class="hero" id="section_1">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-5 col-12 m-auto">
+                            <div class="hero-text">
+                                <h1 class="text-white mb-4"><u class="text-info">{{ header_first_page.left_title }}</u> {{ header_first_page.right_title }}</h1>
+                                <div class="d-flex justify-content-center align-items-center">
+                                    <span class="date-text">{{ header_first_page.subtitle1 }}</span>
+                                    <span class="location-text">{{ header_first_page.subtitle2 }}</span>
+                                </div>
+                                <a href="#section_2" class="custom-link bi-arrow-down arrow-icon"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="video-wrap">
+                    <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                        <source src="{{ header_first_page.video.url }}" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </section>
+            <section class="highlight">
+                <div class="container">
+                    <div class="row">
+                        {% for i in highlights %}
+                            <div class="col-lg-4 col-md-6 col-12">
+                                <div class="highlight-thumb">
+                                    <img src="{{ i.img.url }}" class="highlight-image img-fluid" alt="">
+                                    <div class="highlight-info">
+                                        <h3 class="highlight-title">{{ i.title }}</h3>
+                                        <a href="{{ i.video_link }}" class="bi-youtube highlight-icon"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <section class="about section-padding" id="section_2">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-12">
+                            <h2 class="mb-4">{{ about.left_title }} <u class="text-info">{{ about.right_title }}</u></h2>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <h3 class="mb-3">{{ about.subtitle }}</h3>
+                            <p>{{ about.text1 }}</p>
+                            <a class="custom-btn custom-border-btn btn custom-link mt-3 me-3" href="#section_3">{{ about.left_btn }}</a>
+                            <a class="custom-btn btn custom-link mt-3" href="#section_4">{{ about.right_btn }}</a>
+                        </div>
+                        <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                            <h4>{{ about.text2 }}</h4>
+                            <div class="avatar-group border-top py-5 mt-5">
+                                <img src="{{ about.img1.url }}" class="img-fluid avatar-image" alt="">
+                                <img src="{{ about.img2.url }}" class="img-fluid avatar-image avatar-image-left" alt="">
+                                <img src="{{ about.img3.url }}" class="img-fluid avatar-image avatar-image-left" alt="">
+                                <img src="{{ about.img4.url }}" class="img-fluid avatar-image avatar-image-left" alt="">
+                                <p class="d-inline">{{ about.info }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="speakers section-padding" id="section_3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-6 col-12 d-flex flex-column justify-content-center align-items-center">
+                            <div class="speakers-text-info">
+                                <h2 class="mb-4">{{ speakers.left_title }} <u class="text-info">{{ speakers.right_title }}</u></h2>
+                                <p>{{ speakers.text }}</p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <div class="speakers-thumb">
+                                <img src="{{ speakers.img.url }}" class="img-fluid speakers-image" alt="">
+                                <small class="speakers-featured-text">{{ speakers.title }}</small>
+                                <div class="speakers-info">
+                                    <h5 class="speakers-title mb-0">{{ speakers.name }}</h5>
+                                    <p class="speakers-text mb-0">{{ speakers.profession }}</p>
+                                    <ul class="social-icon">
+                                        <li><a href="{{ speakers.social_url1 }}" class="social-icon-link bi-{{ speakers.social1 }}"></a></li>
+                                        <li><a href="{{ speakers.social_url2 }}" class="social-icon-link bi-{{ speakers.social2 }}"></a></li>
+                                        <li><a href="{{ speakers.social_url13}}" class="social-icon-link bi-{{ speakers.social3 }}"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-12 col-12">
+                            <div class="row">
+                                {% for i in speakers_content %}
+                                    <div class="col-lg-3 col-md-6 col-12">
+                                        <div class="speakers-thumb speakers-thumb-small">
+                                            <img src="{{ i.img.url }}" class="img-fluid speakers-image" alt="">
+                                            <div class="speakers-info">
+                                                <h5 class="speakers-title mb-0">{{ i.name }}</h5>
+                                                <p class="speakers-text mb-0">{{ i.profession }}</p>
+                                                <ul class="social-icon">
+                                                    {% if i.social1 %}
+                                                        <li><a href="{{ i.social_url1 }}" class="social-icon-link bi-{{ i.social1 }}"></a></li>
+                                                        {% if i.social2 %}
+                                                            <li><a href="{{ i.social_url2 }}" class="social-icon-link bi-{{ i.social2 }}"></a></li>
+                                                        {% endif %}
+                                                            {% if i.social3 %}
+                                                                <li><a href="{{ i.social_url3 }}" class="social-icon-link bi-{{ i.social3 }}"></a></li>
+                                                            {% endif %}
+                                                    {% endif %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="schedule section-padding" id="section_4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <h2 class="mb-5 text-center">{{ schedules.left_title1 }} <u class="text-info">{{ schedules.right_title1 }}</u></h2>
+                            <nav>
+                                <div class="nav nav-tabs align-items-baseline" id="nav-tab" role="tablist">
+                                    {% for i in schedules_categories %}
+                                        {% if forloop.counter == 1 %}
+                                            <button class="nav-link active" id="nav-{{ i.classname }}-tab" data-bs-toggle="tab" data-bs-target="#nav-{{ i.classname }}" type="button" role="tab" aria-controls="nav-{{ i.classname }}" aria-selected="true">
+                                                <h3>
+                                                    <span>{{ i.title }}</span>
+                                                    <small>{{ i.subtitle }}</small>
+                                                </h3>
+                                            </button>
+                                        {% else %}
+                                            <button class="nav-link" id="nav-{{ i.classname }}-tab" data-bs-toggle="tab" data-bs-target="#nav-{{ i.classname }}" type="button" role="tab" aria-controls="nav-{{ i.classname }}" aria-selected="false">
+                                                <h3>
+                                                    <span>{{ i.title }}</span>
+                                                    <small>{{ i.subtitle }}</small>
+                                                </h3>
+                                            </button>
+                                        {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </nav>
+                            <div class="tab-content mt-5" id="nav-tabContent">
+                                {% for i in schedules_categories %}
+                                    {% if forloop.counter == 1 %}
+                                        <div class="tab-pane fade show active" id="nav-{{ i.classname }}" role="tabpanel" aria-labelledby="nav-{{ i.classname }}-tab">
+                                    {% else %}
+                                        <div class="tab-pane fade show" id="nav-{{ i.classname }}" role="tabpanel" aria-labelledby="nav-{{ i.classname }}-tab">
+                                    {% endif %}
+                                        {% for j in i.cat_schedules.all %}
+                                            <div class="row border-bottom pb-5 mb-5">
+                                                <div class="col-lg-4 col-12">
+                                                    <img src="{{ j.img.url }}" class="schedule-image img-fluid" alt="">
+                                                </div>
+                                                <div class="col-lg-8 col-12 mt-3 mt-lg-0">
+                                                    <h4 class="mb-2">{{ j.title }}</h4>
+                                                    <p>{{ j.text }}</p>
+                                                    <div class="d-flex align-items-center mt-4">
+                                                        {% if j.name %}
+                                                            <div class="avatar-group d-flex">
+                                                                <img src="{{ j.profile_img.url }}" class="img-fluid avatar-image" alt="">
+                                                                <div class="ms-3">
+                                                                    {{ j.name }}
+                                                                    <p class="speakers-text mb-0">{{ j.profession }}</p>
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+                                                        <span class="mx-3 mx-lg-5">
+                                                            <i class="bi-clock me-2"></i>
+                                                            {{ j.time }}
+                                                        </span>
+                                                        <span class="mx-1 mx-lg-5">
+                                                            <i class="bi-layout-sidebar me-2"></i>
+                                                            {{ j.place }}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section style="background-image: url({{ schedules.img.url }});" class="call-to-action section-padding">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-7 col-12">
+                            <h2 class="text-white mb-4">{{ schedules.left_title2 }} <u class="text-info">{{ schedules.right_title2 }}</u></h2>
+                            <p class="text-white">{{ schedules.text }}</p>
+                        </div>
+                        <div class="col-lg-3 col-12 ms-lg-auto mt-4 mt-lg-0">
+                            <a href="#section_7" class="custom-btn btn">{{ schedules.btn_name }}</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="pricing section-padding" id="section_5">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-10 col-12 text-center mx-auto mb-5">
+                            <h2>{{ pricing.left_title }} <u class="text-info">{{ pricing.right_title }}</u></h2>
+                        </div>
+                        {% for i in pricing_content %}
+                            <div class="col-lg-4 col-md-6 col-12 mb-5 mb-lg-0">
+                                <div class="pricing-thumb bg-white shadow-lg">                                
+                                    <div class="pricing-title-wrap d-flex align-items-center">
+                                        <h4 class="pricing-title text-white mb-0">{{ i.title }}</h4>
+                                        <h5 class="pricing-small-title text-white mb-0 ms-auto">${{ i.price }}</h5>
+                                    </div>
+                                    <div class="pricing-body">
+                                        <p>
+                                            <i class="bi-cup me-2"></i> {{ i.offer1 }}
+                                        </p>
+                                        <p>
+                                            <i class="bi-controller me-2"></i> {{ i.offer2 }}
+                                        </p>
+                                        <p>
+                                            <i class="bi-chat-square me-2"></i> {{ i.offer3 }}
+                                        </p>
+                                        <div class="border-bottom pb-3 mb-4"></div>
+                                        <p>{{ i.text }}</p>
+                                        <a class="custom-btn btn mt-3" href="#">{{ pricing.btn_name }}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </section>
+            <section class="venue section-padding" id="section_6">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-12 col-12">
+                            <h2 class="mb-5">{{ venue.left_title }} <u class="text-info">{{ venue.right_title }}</u></h2>
+                        </div>
+                        <div class="col-lg-6 col-12">
+                            <iframe class="google-map" src="{{ venue.google_map }}" width="100%" height="371.59" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                        <div class="col-lg-6 col-12 mt-5 mt-lg-0">
+                            <div class="venue-thumb bg-white shadow-lg">
+                                <div class="venue-info-title">
+                                    <h2 class="text-white mb-0">{{ venue.title }}</h2>
+                                </div>
+                                <div class="venue-info-body">
+                                    <h4 class="d-flex">
+                                        <i class="bi-geo-alt me-2"></i> 
+                                        <span>{{ venue.info1 }}</span>
+                                    </h4>
+                                    <h5 class="mt-4 mb-3">
+                                        <a href="">
+                                            <i class="bi-envelope me-2"></i>
+                                            {{ venue.info2 }}
+                                        </a>
+                                    </h5>
+                                    <h5 class="mb-0">
+                                        <a href="">
+                                            <i class="bi-telephone me-2"></i>
+                                            {{ venue.info3 }}
+                                        </a>
+                                    </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section style="background-image: url({{ contact_get.img.url }});" class="contact section-padding" id="section_7">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-8 col-12 mx-auto">
+                            <form class="custom-form contact-form bg-white shadow-lg" method="post" role="form">
+                                {% csrf_token %}
+                                <h2>{{ contact_get.title }}</h2>
+                                <div class="row">
+                                    <div class="col-lg-4 col-md-4 col-12">                                    
+                                        <input type="text" name="user_name" id="name" class="form-control" placeholder="{{ contact_get.placeholder1 }}" required="">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-12">         
+                                        <input type="email" name="user_email" id="email" pattern="[^ @]*@[^ @]*" class="form-control" placeholder="{{ contact_get.placeholder2 }}" required="">
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-12">                                    
+                                        <input type="text" name="subject" id="subject" class="form-control" placeholder="{{ contact_get.placeholder3 }}">
+                                    </div>
+                                    <div class="col-12">
+                                        <textarea class="form-control" rows="5" id="message" name="message" placeholder="{{ contact_get.placeholder4 }}"></textarea>
+                                        <button type="submit" class="form-control">{{ contact_get.btn_name }}</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="site-footer">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12 col-12 border-bottom pb-5 mb-5">
+                        <div class="d-flex">
+                            <a href="index.html" class="navbar-brand">
+                                <i class="bi-bullseye brand-logo"></i>
+                                <span class="brand-text">Leadership <br> Event</span>
+                            </a>
+                            <ul class="social-icon ms-auto">
+                                <li><a href="{{ footer.social_url1 }}" class="social-icon-link bi-{{ footer.social1 }}"></a></li>
+                                <li><a href="{{ footer.social_url2 }}" class="social-icon-link bi-{{ footer.social2 }}"></a></li>
+                                <li><a href="{{ footer.social_url3 }}" class="social-icon-link bi-{{ footer.social3 }}"></a></li>
+                                <li><a href="{{ footer.social_url4 }}" class="social-icon-link bi-{{ footer.social4 }}"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-12">
+                        <ul class="footer-menu d-flex flex-wrap">
+                            <li class="footer-menu-item"><a href="#section_2" class="footer-menu-link">{{ footer.subtitle1 }}</a></li>
+                            <li class="footer-menu-item"><a href="" class="footer-menu-link">{{ footer.subtitle2 }}</a></li>
+                            <li class="footer-menu-item"><a href="" class="footer-menu-link">{{ footer.subtitle3 }}</a></li>
+                            <li class="footer-menu-item"><a href="#section_7" class="footer-menu-link">{{ footer.subtitle4 }}</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5 col-12 ms-lg-auto">
+                        <div class="copyright-text-wrap d-flex align-items-center">
+                            <p class="copyright-text ms-lg-auto me-4 mb-0">{{ footer.copyright1 }}
+                            <br>{{ footer.copyright2 }} 
+          					<br><br>{{ footer.design }}: <a title="CSS Templates" rel="sponsored" href="{{ footer.name_link }}" target="_blank">{{ footer.name }}</a></p>
+                            <a href="#section_1" class="bi-arrow-up arrow-icon custom-link"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <script src="{% static 'js/jquery.min.js' %}"></script>
+        <script src="{% static 'js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'js/jquery.sticky.js' %}"></script>
+        <script src="{% static 'js/click-scroll.js' %}"></script>
+        <script src="{% static 'js/custom.js' %}"></script>
+    </body>
+</html>
